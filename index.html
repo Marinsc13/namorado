@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Para o Amor da Minha Vida 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #d8b5f1, #a66dd4);
+      font-family: 'Parisienne', cursive;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: #9b59b6;
+      transform: rotate(45deg);
+      margin: 0 auto 20px;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #c39bd3;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 50px;
+      top: 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .photo {
+      margin: 30px auto;
+    }
+
+    .photo img {
+      max-width: 300px;
+      border-radius: 15px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px #d0a3f7;
+    }
+
+    /* Glitter */
+    .glitter {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #f0c9ff;
+      top: -10px;
+      left: calc(100% * var(--x));
+      animation: fall 5s linear infinite;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    /* Beijos animados */
+    .kiss {
+      position: absolute;
+      top: -30px;
+      font-size: 24px;
+      color: #e5b6f0;
+      animation: floatKiss 4s linear infinite;
+    }
+
+    @keyframes floatKiss {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart"></div>
+    <h1>Para o Amor da Minha Vida 💜</h1>
+    <div class="photo">
+      <img src="vida.jpeg" alt="Nossa foto juntos">
+    </div>
+    <p>
+      Meu amor,<br>
+      Cada momento com você é uma parte linda da nossa história. Você é a melhor parte da minha vida, meu melhor amigo, meu amor eterno. Obrigada por ser tudo o que eu sempre sonhei e ainda mais do que eu sonhei. Que nosso amor continue forte, doce e leve. eu te amo muito mesmo acho que você não tem noção do quanto!!!! 
+      <br><br>
+      Te amo infinitamente! 💋
+    </p>
+  </div>
+
+  <!-- Gerar beijos e glitter automaticamente -->
+  <script>
+    // Glitter
+    for (let i = 0; i < 50; i++) {
+      const glitter = document.createElement('div');
+      glitter.className = 'glitter';
+      glitter.style.setProperty('--x', Math.random());
+      glitter.style.left = Math.random() * window.innerWidth + 'px';
+      glitter.style.animationDuration = (Math.random() * 5 + 3) + 's';
+      document.body.appendChild(glitter);
+    }
+
+    // Beijos
+    const emojis = ["💋", "😘", "💜"];
+    for (let i = 0; i < 20; i++) {
+      const kiss = document.createElement('div');
+      kiss.className = 'kiss';
+      kiss.textContent = emojis[i % emojis.length];
+      kiss.style.left = Math.random() * 100 + 'vw';
+      kiss.style.animationDuration = (Math.random() * 4 + 3) + 's';
+      document.body.appendChild(kiss);
+    }
+  </script>
+</body>
+</html>
